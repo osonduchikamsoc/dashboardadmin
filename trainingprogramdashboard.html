@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Program Dashboard</title>
+    <link rel="stylesheet" href="trainingprogram.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <a href="#" class="logo">
+            <span>
+                <img src="image/original logo.png" alt="Institute Logo">
+            </span>
+            <span>
+                INSTITUTE OF HOUSING ADMINISTRATION <span>& </span>
+                <small>MANAGEMENT LTD/GTE</small>
+            </span>
+        </a>
+
+        <nav class="sidebar-nav">
+            <a href="overviewdashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Overview</span>
+            </a>
+
+            <a href="propertymgtdashboard.html">
+                <i class="fa-solid fa-building"></i>
+                <span>Properties</span>
+            </a>
+
+            <a href="traineesdashboard.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Trainees</span>
+            </a>
+
+            <a href="paymentdashboard.html">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Payments</span>
+            </a>
+
+            <a href="enquirydashboard.html">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Enquiries</span>
+            </a>
+
+            <a href="trainingprogramdashboard.html" class="active">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Training Programs</span>
+            </a>
+
+            <a href="settings.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-content">
+        
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search training programs...">
+            </div>
+            <div class="top-actions">
+                <div class="date-badge">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>Oct 2023 - Oct 2024</span>
+                </div>
+                <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                <button class="primary-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Generate Report</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- METRICS CARDS (4 Training Program Details with 0 values) -->
+        <div class="metrics-grid">
+            <div class="card">
+                <div class="card-header">
+                    <span>Total Programs</span>
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div class="card-value">0</div>
+                <div class="card-subtext">~ 0.0% vs last month</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span>Active Programs</span>
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div class="card-value">0</div>
+                <div class="card-subtext">~ 0.0% vs last month</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span>Total Enrolments</span>
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                <div class="card-value">0</div>
+                <div class="card-subtext">~ 0.0% vs last month</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span>Completed Cohorts</span>
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <div class="card-value">0</div>
+                <div class="card-subtext">~ 0.0% vs last month</div>
+            </div>
+        </div>
+
+        <!-- MIDDLE SECTION (TREND CHART ONLY) -->
+        <div class="middle-grid">
+            <div class="card chart-card">
+                <div class="chart-header-flex">
+                    <div>
+                        <div class="chart-title">Program Enrolment Trends</div>
+                        <div class="chart-subtitle">Enrolments vs Program Completions (Jan - Jun)</div>
+                    </div>
+                </div>
+                <div class="chart-placeholder">
+                    No enrolment trend data available
+                </div>
+                <div class="chart-labels">
+                    <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOWER SECTION (PROGRAM TABLE) -->
+        <div class="card">
+            <div class="chart-header-flex">
+                <div class="chart-title">Training Programs List</div>
+                <a href="#" style="color: #3b82f6; font-size: 12px; text-decoration: none;">View All</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table-container">
+                    <thead>
+                        <tr>
+                            <th>Program Name</th>
+                            <th>Description</th>
+                            <th>Fee</th>
+                            <th>Intake Date</th>
+                            <th>Mode</th>
+                            <th>Enrolled Trainees</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="7">No training programs available</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

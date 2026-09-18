@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overview Dashboard - IHAM</title>
+  <link rel="stylesheet" href="overview.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="app-layout">
+
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar">
+      
+      <!-- Logo Branding -->
+      <a href="overviewdashboard.html" class="logo">
+        <div class="logo-mark">
+          <img src="image/original logo.png" alt="Institute Logo">
+        </div>
+        <div class="logo-text">
+          <span>INSTITUTE OF HOUSING ADMINISTRATION &amp;</span>
+          <small>MANAGEMENT LTD/GTE</small>
+        </div>
+      </a>
+
+      <!-- Main Navigation Links -->
+      <nav class="sidebar-nav">
+        <a href="overviewdashboard.html" class="nav-item active">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Overview</span>
+        </a>
+
+        <a href="propertymgtdashboard.html" class="nav-item">
+          <i class="fa-solid fa-building"></i>
+          <span>Properties</span>
+        </a>
+
+        <a href="traineesdashboard.html" class="nav-item">
+          <i class="fa-solid fa-users"></i>
+          <span>Trainees</span>
+        </a>
+
+        <a href="paymentdashboard.html" class="nav-item">
+          <i class="fa-solid fa-credit-card"></i>
+          <span>Payments</span>
+        </a>
+
+        <a href="enquirydashboard.html" class="nav-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Enquiries</span>
+        </a>
+
+        <a href="trainingprogramdashboard.html" class="nav-item">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>Training Programs</span>
+        </a>
+
+        <a href="settings.html" class="nav-item">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <!-- User Profile Card (Reference Bottom Sidebar Style) -->
+      <div class="sidebar-user">
+        <div class="admin-avatar">A</div>
+        <div class="admin-info">
+          <strong>Admin</strong>
+          <small>Administrator</small>
+        </div>
+        <a href="#" class="logout-btn" title="Logout">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-content">
+
+      <!-- TOPBAR NAVIGATION -->
+      <header class="topbar">
+
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="topbar-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search dashboard...">
+        </div>
+
+        <div class="topbar-actions">
+          
+          <div class="date-filter">
+            <i class="fa-regular fa-calendar"></i>
+            <select>
+              <option>2026</option>
+              <option>2025</option>
+              <option>2024</option>
+            </select>
+          </div>
+
+          <button class="icon-btn notification-btn">
+            <i class="fa-regular fa-bell"></i>
+            <span class="badge">4</span>
+          </button>
+
+          <a href="propertymgtdashboard.html" class="btn-primary">
+            <i class="fa-solid fa-plus"></i>
+            <span>Add Property</span>
+          </a>
+
+        </div>
+
+      </header>
+
+
+      <!-- PAGE BODY -->
+      <div class="page-body">
+
+        <!-- WELCOME HEADER -->
+        <div class="page-header">
+          <div>
+            <h1>Overview Dashboard</h1>
+            <p>Welcome back. Here's an overview of your property and training activities.</p>
+          </div>
+        </div>
+
+
+        <!-- TOP STATS CARDS (GRID OF 4) -->
+        <div class="stats-grid">
+
+          <!-- Card 1 -->
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-label">Total Properties Listed</span>
+              <div class="stat-icon-wrapper">
+                <i class="fa-solid fa-building"></i>
+              </div>
+            </div>
+            <div class="stat-value">00</div>
+            <div class="stat-meta">
+              <span class="trend neutral"><i class="fa-solid fa-minus"></i> 0.0%</span>
+              <span class="meta-text">vs last month</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-label">Active Trainees</span>
+              <div class="stat-icon-wrapper">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+            </div>
+            <div class="stat-value">0</div>
+            <div class="stat-meta">
+              <span class="trend neutral"><i class="fa-solid fa-minus"></i> 0.0%</span>
+              <span class="meta-text">vs last month</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-label">Pending Payments</span>
+              <div class="stat-icon-wrapper">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+            </div>
+            <div class="stat-value">₦000</div>
+            <div class="stat-meta">
+              <span class="trend neutral"><i class="fa-solid fa-minus"></i> 0.0%</span>
+              <span class="meta-text">vs last month</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-label">New Enquiries This Week</span>
+              <div class="stat-icon-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+            </div>
+            <div class="stat-value">0</div>
+            <div class="stat-meta">
+              <span class="trend neutral"><i class="fa-solid fa-minus"></i> 0.0%</span>
+              <span class="meta-text">vs last month</span>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- MAIN DASHBOARD GRID (ANALYTICS & SIDE WIDGET) -->
+        <div class="dashboard-main-grid">
+
+          <!-- LEFT SECTION: CHART & TABLE -->
+          <div class="grid-left-column">
+
+            <!-- REVENUE CHART CARD -->
+            <div class="dashboard-card">
+              
+              <div class="card-header">
+                <div>
+                  <h2 class="card-title">Revenue Overview</h2>
+                  <p class="card-subtitle">Property sales vs. training fees</p>
+                </div>
+                <div class="chart-legend">
+                  <span class="legend-item property-legend"><i class="fa-solid fa-circle"></i> Property Sales</span>
+                  <span class="legend-item training-legend"><i class="fa-solid fa-circle"></i> Training Fees</span>
+                </div>
+              </div>
+
+              <div class="revenue-chart">
+                <div class="chart-y-axis">
+                  <span>₦10M</span>
+                  <span>₦8M</span>
+                  <span>₦6M</span>
+                  <span>₦2M</span>
+                  <span>₦0</span>
+                </div>
+
+                <div class="chart-area">
+                  <div class="chart-grid-line"></div>
+                  <div class="chart-grid-line"></div>
+                  <div class="chart-grid-line"></div>
+                  <div class="chart-grid-line"></div>
+                  <div class="chart-grid-line"></div>
+
+                  <div class="chart-bars">
+                    
+                    <div class="month">
+                      <div class="bars">
+                        <div class="bar property-bar" style="height:0%;"></div>
+                        <div class="bar training-bar" style="height:0%;"></div>
+                      </div>
+                      <span>Jan</span>
+                    </div>
+
+                    <div class="month">
+                      <div class="bars">
+                        <div class="bar property-bar" style="height:0%;"></div>
+                        <div class="bar training-bar" style="height:0%;"></div>
+                      </div>
+                      <span>Feb</span>
+                    </div>
+
+                    <div class="month">
+                      <div class="bars">
+                        <div class="bar property-bar" style="height:0%;"></div>
+                        <div class="bar training-bar" style="height:0%;"></div>
+                      </div>
+                      <span>Mar</span>
+                    </div>
+
+                    <div class="month">
+                      <div class="bars">
+                        <div class="bar property-bar" style="height:0%;"></div>
+                        <div class="bar training-bar" style="height:0%;"></div>
+                      </div>
+                      <span>Apr</span>
+                    </div>
+
+                    <div class="month">
+                      <div class="bars">
+                        <div class="bar property-bar" style="height:0%;"></div>
+                        <div class="bar training-bar" style="height:0%;"></div>
+                      </div>
+                      <span>May</span>
+                    </div>
+
+                    <div class="month">
+                      <div class="bars">
+                        <div class="bar property-bar" style="height:0%;"></div>
+                        <div class="bar training-bar" style="height:0%;"></div>
+                      </div>
+                      <span>Jun</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- RECENT OVERVIEW TABLE CARD (3 DETAIL ROWS, ZEROED VALUES) -->
+            <div class="dashboard-card">
+              
+              <div class="card-header">
+                <div>
+                  <h2 class="card-title">Property & Training Records</h2>
+                  <p class="card-subtitle">Summary of registered activities</p>
+                </div>
+                <a href="#" class="card-link">View All</a>
+              </div>
+
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>CATEGORY / TITLE</th>
+                      <th>RECORDS</th>
+                      <th>PENDING</th>
+                      <th>TOTAL VALUE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="table-item-title">
+                          <strong>Property Listings</strong>
+                          <small>Residential & Commercial</small>
+                        </div>
+                      </td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>₦0</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="table-item-title">
+                          <strong>Trainee Programs</strong>
+                          <small>Housing Administration Courses</small>
+                        </div>
+                      </td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>₦0</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="table-item-title">
+                          <strong>General Enquiries</strong>
+                          <small>Active Direct Requests</small>
+                        </div>
+                      </td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>₦0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- RIGHT SECTION: RECENT ACTIVITY & QUICK ACTIONS -->
+          <div class="grid-right-column">
+
+            <!-- RECENT ACTIVITY CARD -->
+            <div class="dashboard-card">
+              
+              <div class="card-header">
+                <div>
+                  <h2 class="card-title">Recent Activity</h2>
+                  <p class="card-subtitle">Latest system activities</p>
+                </div>
+                <button class="icon-btn-sm" title="Refresh">
+                  <i class="fa-solid fa-rotate-right"></i>
+                </button>
+              </div>
+
+              <div class="activity-feed">
+
+                <div class="activity-item">
+                  <div class="activity-icon">
+                    <i class="fa-solid fa-user-plus"></i>
+                  </div>
+                  <div class="activity-details">
+                    <strong>New trainee registration</strong>
+                    <p>Housing Administration program.</p>
+                    <span class="activity-time">0 minutes ago</span>
+                  </div>
+                </div>
+
+                <div class="activity-item">
+                  <div class="activity-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div class="activity-details">
+                    <strong>New enquiry received</strong>
+                    <p>Property enquiry submission.</p>
+                    <span class="activity-time">0 minutes ago</span>
+                  </div>
+                </div>
+
+                <div class="activity-item">
+                  <div class="activity-icon">
+                    <i class="fa-solid fa-credit-card"></i>
+                  </div>
+                  <div class="activity-details">
+                    <strong>Payment confirmed</strong>
+                    <p>₦0 training fee payment confirmed.</p>
+                    <span class="activity-time">0 hours ago</span>
+                  </div>
+                </div>
+
+                <div class="activity-item">
+                  <div class="activity-icon">
+                    <i class="fa-solid fa-building"></i>
+                  </div>
+                  <div class="activity-details">
+                    <strong>New property listed</strong>
+                    <p>Residential property added.</p>
+                    <span class="activity-time">0 hours ago</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="card-footer">
+                <a href="#" class="btn-block">View All Activity <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS CARD -->
+            <div class="dashboard-card">
+              
+              <div class="card-header">
+                <div>
+                  <h2 class="card-title">Quick Actions</h2>
+                  <p class="card-subtitle">Administrative shortcuts</p>
+                </div>
+              </div>
+
+              <div class="quick-actions-list">
+                <a href="traineesdashboard.html" class="action-btn">
+                  <i class="fa-solid fa-user-plus"></i>
+                  <span>View Trainees</span>
+                </a>
+
+                <a href="trainingprogramdashboard.html" class="action-btn">
+                  <i class="fa-solid fa-chalkboard-user"></i>
+                  <span>Manage Programs</span>
+                </a>
+
+                <a href="paymentdashboard.html" class="action-btn">
+                  <i class="fa-solid fa-credit-card"></i>
+                  <span>Review Payments</span>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+
+
+</html>

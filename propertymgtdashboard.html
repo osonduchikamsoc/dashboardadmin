@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="propertymgt.css">
+    <title>Property Management | IHAM Admin</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <a href="#" class="logo">
+                <img src="image/original logo.png" alt="Institute Logo">
+                <span>
+                    INSTITUTE OF HOUSING ADMINISTRATION
+                    <small>& MANAGEMENT LTD/GTE</small>
+                </span>
+            </a>
+
+            <nav class="sidebar-nav">
+
+                <a href="overviewdashboard.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Overview</span>
+                </a>
+
+                <a href="propertymgtdashboard.html" class="active">
+                    <i class="fa-solid fa-building"></i>
+                    <span>Properties</span>
+                </a>
+
+                <a href="traineesdashboard.html">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Trainees</span>
+                </a>
+
+                <a href="paymentdashboard.html">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Payments</span>
+                </a>
+
+                <a href="enquirydashboard.html">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Enquiries</span>
+                </a>
+
+                <a href="trainingprogramdashboard.html">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Training Programs</span>
+                </a>
+
+                <a href="settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+                <div class="admin-profile-sidebar">
+                    <div class="profile-avatar">A</div>
+                    <div class="profile-info">
+                        <strong>Admin</strong>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="top-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search market data, zip codes...">
+                </div>
+
+                <div class="topbar-right">
+
+                    <div class="date-badge">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span>Oct 2023 - Oct 2024</span>
+                    </div>
+
+                    <button class="notification">
+                        <i class="fa-regular fa-bell"></i>
+                        <span>3</span>
+                    </button>
+
+                    <button class="btn-green" id="openPropertyForm">
+                        <i class="fa-solid fa-plus"></i>
+                        Generate Report
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- PAGE CONTENT -->
+            <section class="page-content">
+
+                <!-- STAT CARDS (4 TOP STATS FROM DESIGN) -->
+                <div class="property-stats">
+
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <span>Avg. Property Price</span>
+                            <div class="stat-icon"><i class="fa-solid fa-credit-card"></i></div>
+                        </div>
+                        <h3>0</h3>
+                        <div class="stat-subtext positive">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            0% vs last month
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <span>Properties Listed</span>
+                            <div class="stat-icon"><i class="fa-solid fa-building"></i></div>
+                        </div>
+                        <h3>0</h3>
+                        <div class="stat-subtext">
+                            <i class="fa-solid fa-arrow-trend-down"></i>
+                            0% vs last month
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <span>Properties Sold</span>
+                            <div class="stat-icon"><i class="fa-solid fa-house-circle-check"></i></div>
+                        </div>
+                        <h3>0</h3>
+                        <div class="stat-subtext positive">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            0% vs last month
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <span>Avg. Price / Sq Ft</span>
+                            <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        </div>
+                        <h3>0</h3>
+                        <div class="stat-subtext positive">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            0% vs last month
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- MIDDLE GRAPH & DISTRIBUTION GRID -->
+                <div class="dashboard-grid">
+
+                    <!-- PROPERTY PRICE TRENDS -->
+                    <div class="grid-card">
+                        <div class="grid-card-header">
+                            <div>
+                                <h2>Property Price Trends</h2>
+                                <p style="font-size: 11px; color: #6b7280; margin-top: 2px;">Sold Price vs List Price (Jan - Jun)</p>
+                            </div>
+                            <div style="display: flex; gap: 12px; font-size: 11px;">
+                                <span style="color: #10b981;"><i class="fa-solid fa-circle" style="font-size: 8px;"></i> Sold Price</span>
+                                <span style="color: #6366f1;"><i class="fa-solid fa-circle" style="font-size: 8px;"></i> List Price</span>
+                            </div>
+                        </div>
+
+                        <div class="chart-placeholder">
+                            <svg class="chart-svg" viewBox="0 0 500 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0,130 Q120,110 250,70 T500,40 L500,150 L0,150 Z" fill="rgba(16, 185, 129, 0.1)" />
+                                <path d="M0,130 Q120,110 250,70 T500,40" stroke="#10b981" stroke-width="2" />
+                                <path d="M0,140 Q120,125 250,90 T500,60" stroke="#6366f1" stroke-width="2" />
+                            </svg>
+                            <div class="chart-labels">
+                                <span>Jan</span>
+                                <span>Feb</span>
+                                <span>Mar</span>
+                                <span>Apr</span>
+                                <span>May</span>
+                                <span>Jun</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DISTRIBUTION -->
+                    <div class="grid-card">
+                        <div class="grid-card-header">
+                            <h2>Distribution</h2>
+                            <i class="fa-solid fa-ellipsis" style="color: #6b7280; cursor: pointer;"></i>
+                        </div>
+
+                        <div class="distribution-container">
+                            <div class="doughnut-wrapper">
+                                <svg viewBox="0 0 36 36" style="width: 100%; height: 100%; transform: rotate(-90deg);">
+                                    <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="#1f2937" stroke-width="3.8" fill="none" />
+                                    <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="#10b981" stroke-dasharray="45, 100" stroke-width="3.8" fill="none" />
+                                    <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="#a855f7" stroke-dasharray="25, 100" stroke-dashoffset="-45" stroke-width="3.8" fill="none" />
+                                </svg>
+                                <div class="doughnut-center">
+                                    <div class="number">0%</div>
+                                    <div class="label">APARTMENT</div>
+                                </div>
+                            </div>
+
+                            <div class="distribution-legend">
+                                <div class="legend-item">
+                                    <span class="legend-title"><span class="dot" style="background: #10b981;"></span> Apartment</span>
+                                    <span class="legend-value">0%</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-title"><span class="dot" style="background: #a855f7;"></span> House</span>
+                                    <span class="legend-value">0%</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-title"><span class="dot" style="background: #3b82f6;"></span> Condo</span>
+                                    <span class="legend-value">0%</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-title"><span class="dot" style="background: #f59e0b;"></span> Townhouse</span>
+                                    <span class="legend-value">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- BOTTOM GRID (TABLE + RECENT LISTINGS) -->
+                <div class="dashboard-grid">
+
+                    <!-- TOP PERFORMING AREAS / MANAGEMENT TABLE -->
+                    <div class="management-box">
+                        <div class="grid-card-header">
+                            <h2>Top Performing Areas</h2>
+                            <a href="#" class="view-all-link">View All</a>
+                        </div>
+
+                        <!-- FILTER AREA -->
+                        <div class="filter-area">
+                            <div class="search-property">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" id="propertySearch" placeholder="Search by title or location...">
+                            </div>
+
+                            <select id="categoryFilter">
+                                <option value="">All Categories</option>
+                                <option value="Land">Land</option>
+                                <option value="Residential Sale">Residential Sale</option>
+                                <option value="Rent">Rent</option>
+                                <option value="Commercial">Commercial</option>
+                            </select>
+
+                            <select id="statusFilter">
+                                <option value="">All Status</option>
+                                <option value="Available">Available</option>
+                                <option value="Under Offer">Under Offer</option>
+                                <option value="Sold">Sold</option>
+                                <option value="Rented">Rented</option>
+                            </select>
+                        </div>
+
+                        <!-- TABLE (RESTRICTED TO 3 ROWS) -->
+                        <div class="table-wrapper">
+                            <table class="property-table">
+                                <thead>
+                                    <tr>
+                                        <th>Area / Property</th>
+                                        <th>Avg. Price</th>
+                                        <th>Properties Sold</th>
+                                        <th>Growth</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="propertyTableBody">
+
+                                    <!-- RECORD 1 -->
+                                    <tr>
+                                        <td>
+                                            <span class="area-name">Luxury 4 Bedroom Duplex</span>
+                                            <div style="font-size: 10px; color: #6b7280;">Abuja, Nigeria</div>
+                                        </td>
+                                        <td>₦85,000,000</td>
+                                        <td>0</td>
+                                        <td style="color: #10b981;">+0%</td>
+                                        <td><span class="status available-status">Available</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                                <button class="action-btn" title="Archive"><i class="fa-solid fa-box-archive"></i></button>
+                                                <button class="action-btn" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- RECORD 2 -->
+                                    <tr>
+                                        <td>
+                                            <span class="area-name">Premium Residential Land</span>
+                                            <div style="font-size: 10px; color: #6b7280;">Gwarinpa, Abuja</div>
+                                        </td>
+                                        <td>₦35,000,000</td>
+                                        <td>0</td>
+                                        <td style="color: #10b981;">+0%</td>
+                                        <td><span class="status offer-status">Under Offer</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                                <button class="action-btn" title="Archive"><i class="fa-solid fa-box-archive"></i></button>
+                                                <button class="action-btn" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- RECORD 3 -->
+                                    <tr>
+                                        <td>
+                                            <span class="area-name">Modern Commercial Complex</span>
+                                            <div style="font-size: 10px; color: #6b7280;">Wuse 2, Abuja</div>
+                                        </td>
+                                        <td>₦150,000,000</td>
+                                        <td>0</td>
+                                        <td style="color: #10b981;">+0%</td>
+                                        <td><span class="status sold-status">Sold</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                                <button class="action-btn" title="Archive"><i class="fa-solid fa-box-archive"></i></button>
+                                                <button class="action-btn" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- RECENT LISTINGS -->
+                    <div class="grid-card">
+                        <div class="grid-card-header">
+                            <h2>Recent Listings</h2>
+                            <i class="fa-solid fa-rotate-right" style="color: #6b7280; cursor: pointer;"></i>
+                        </div>
+
+                        <div class="recent-listings-list">
+                            <div class="listing-item">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=300&q=80" alt="Property">
+                                <div class="listing-details">
+                                    <strong>Luxury 4 Bedroom Duplex</strong>
+                                    <small>4 Bed • 4 Bath • Abuja</small>
+                                    <span class="price-tag">₦85,000,000</span>
+                                </div>
+                            </div>
+
+                            <div class="listing-item">
+                                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=300&q=80" alt="Property">
+                                <div class="listing-details">
+                                    <strong>Premium Residential Land</strong>
+                                    <small>Plot • Gwarinpa, Abuja</small>
+                                    <span class="price-tag">₦35,000,000</span>
+                                </div>
+                            </div>
+
+                            <div class="listing-item">
+                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=300&q=80" alt="Property">
+                                <div class="listing-details">
+                                    <strong>Modern Commercial Complex</strong>
+                                    <small>Commercial • Wuse 2, Abuja</small>
+                                    <span class="price-tag">₦150,000,000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-light" style="width: 100%; margin-top: 20px; justify-content: center; font-size: 11px; text-transform: uppercase;">
+                            View All Listings
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- ADD / EDIT PROPERTY FORM -->
+                <div class="property-form-section" id="propertyFormSection">
+
+                    <div class="form-header">
+                        <div>
+                            <h2>Add Property</h2>
+                            <p style="font-size: 11px; color: #6b7280;">Enter the property details below.</p>
+                        </div>
+                        <button class="close-form" id="closePropertyForm">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <form id="propertyForm">
+
+                        <div class="form-grid">
+
+                            <!-- TITLE -->
+                            <div class="form-group full">
+                                <label for="propertyTitle">Property Title</label>
+                                <input type="text" id="propertyTitle" placeholder="Enter property title" required>
+                            </div>
+
+                            <!-- CATEGORY -->
+                            <div class="form-group">
+                                <label for="propertyCategory">Category</label>
+                                <select id="propertyCategory" required>
+                                    <option value="">Select Category</option>
+                                    <option value="Land">Land</option>
+                                    <option value="Residential Sale">Residential Sale</option>
+                                    <option value="Rent">Rent</option>
+                                    <option value="Commercial">Commercial</option>
+                                </select>
+                            </div>
+
+                            <!-- PRICE -->
+                            <div class="form-group">
+                                <label for="propertyPrice">Price</label>
+                                <input type="number" id="propertyPrice" placeholder="Enter price" min="0" required>
+                            </div>
+
+                            <!-- LOCATION -->
+                            <div class="form-group full">
+                                <label for="propertyLocation">Location</label>
+                                <input type="text" id="propertyLocation" placeholder="e.g. Gwarinpa, Abuja" required>
+                            </div>
+
+                            <!-- CONDITIONAL DETAILS -->
+                            <div class="conditional-fields" id="propertyDetails">
+                                <div class="form-group">
+                                    <label for="bedrooms">Bedrooms</label>
+                                    <input type="number" id="bedrooms" min="0" placeholder="Number of bedrooms">
+                                </div>
+                                <div class="form-group">
+                                    <label for="bathrooms">Bathrooms</label>
+                                    <input type="number" id="bathrooms" min="0" placeholder="Number of bathrooms">
+                                </div>
+                                <div class="form-group">
+                                    <label for="propertySize">Size</label>
+                                    <input type="text" id="propertySize" placeholder="e.g. 500 sqm">
+                                </div>
+                            </div>
+
+                            <!-- DESCRIPTION -->
+                            <div class="form-group full">
+                                <label for="propertyDescription">Description</label>
+                                <textarea id="propertyDescription" rows="4" placeholder="Write a detailed description of the property..."></textarea>
+                            </div>
+
+                            <!-- IMAGE UPLOAD -->
+                            <div class="form-group full">
+                                <label for="propertyImages">Property Images</label>
+                                <div class="upload-box">
+                                    <input type="file" id="propertyImages" accept="image/*" multiple>
+                                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                                    <strong>Upload Property Images</strong>
+                                    <span>You can select multiple images</span>
+                                </div>
+                                <div class="image-preview" id="imagePreview"></div>
+                            </div>
+
+                            <!-- STATUS -->
+                            <div class="form-group full">
+                                <label for="propertyStatus">Status</label>
+                                <select id="propertyStatus" required>
+                                    <option value="Available">Available</option>
+                                    <option value="Under Offer">Under Offer</option>
+                                    <option value="Sold">Sold</option>
+                                    <option value="Rented">Rented</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <!-- FORM BUTTONS -->
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-light" id="cancelProperty">Cancel</button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                                Save Property
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
