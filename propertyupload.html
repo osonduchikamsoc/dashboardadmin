@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Image Upload - Institute Dashboard</title>
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="propertyupload.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        <!-- SIDEBAR OVERLAY FOR MOBILE -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <a href="index.html" class="logo">
+                <img src="image/original logo.png" alt="Institute Logo">
+                <div class="logo-text">
+                    INSTITUTE OF HOUSING ADMINISTRATION & 
+                    <small>MANAGEMENT LTD/GTE</small>
+                    <span>Admin Panel</span>
+                </div>
+            </a>
+
+            <nav class="sidebar-nav">
+                <a href="index.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Overview</span>
+                </a>
+
+                <a href="propertymgtdashboard.html">
+                    <i class="fa-solid fa-building"></i>
+                    <span>Properties</span>
+                </a>
+
+                <a href="traineesdashboard.html">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Trainees</span>
+                </a>
+
+                <a href="paymentdashboard.html">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Payments</span>
+                </a>
+
+                <a href="enquirydashboard.html">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Enquiries</span>
+                </a>
+
+                <a href="propertyupload.html" class="active">
+                    <i class="fa-solid fa-upload"></i>
+                    <span>Upload property image</span>
+                </a>
+
+                <a href="settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main-content">
+
+            <!-- TOP BAR (Sticky with elevated Z-Index) -->
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="top-actions">
+                    <button class="icon-btn" aria-label="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+                    <button class="btn-primary" id="save-all-btn">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        <span>Save All Changes</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- METRICS CARDS -->
+            <div class="metrics-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <span>Total Staged Images</span>
+                        <i class="fa-solid fa-images"></i>
+                    </div>
+                    <div class="card-value" id="total-count">0</div>
+                    <div class="card-subtext">Images loaded in workspace</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span>Total Batch Size</span>
+                        <i class="fa-solid fa-hard-drive"></i>
+                    </div>
+                    <div class="card-value" id="total-size">0.00 MB</div>
+                    <div class="card-subtext">Estimated memory consumption</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span>Selected Assets</span>
+                        <i class="fa-solid fa-check-double"></i>
+                    </div>
+                    <div class="card-value" id="selected-count">0</div>
+                    <div class="card-subtext">Ready for bulk actions</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span>Upload Queue Status</span>
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <div class="card-value" id="upload-status">Idle</div>
+                    <div class="card-subtext">Ready for server sync</div>
+                </div>
+            </div>
+
+            <!-- DROP ZONE & PROPERTY SELECTION AREA -->
+            <div class="card upload-card">
+                
+                <!-- PROPERTY SELECTOR FORM SECTION -->
+                <div class="property-selection-section">
+                    <div class="form-group">
+                        <label for="property-select">
+                            <i class="fa-solid fa-building-user"></i> Select Target Property
+                        </label>
+                        <select id="property-select" class="form-control" required>
+                            <option value="" disabled selected>-- Choose a property to associate images with --</option>
+                            <option value="PROP-001">Royal Haven Estates (Abuja)</option>
+                            <option value="PROP-002">Victoria Crest Towers (Lagos)</option>
+                            <option value="PROP-003">Pinegrove Heights (Port Harcourt)</option>
+                            <option value="PROP-004">Grand Horizon Commercial Mall (Enugu)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image-category">
+                            <i class="fa-solid fa-tags"></i> Image Category / Location Tag
+                        </label>
+                        <select id="image-category" class="form-control">
+                            <option value="exterior">Exterior & Elevation</option>
+                            <option value="interior">Interior / Living Area</option>
+                            <option value="bedroom">Bedrooms & Bathrooms</option>
+                            <option value="site-plan">Floor Plan & Site Layout</option>
+                            <option value="amenities">Amenities & Parking</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- DROP ZONE -->
+                <div class="drop-zone" id="drop-zone">
+                    <i class="fa-solid fa-cloud-arrow-up drop-icon"></i>
+                    <h3>Drag & Drop property images here</h3>
+                    <p>Supports mass batch uploading (JPG, PNG, WEBP, AVIF)</p>
+                    <label for="file-input" class="btn-primary custom-file-label">
+                        <i class="fa-solid fa-folder-open"></i> Browse Files
+                    </label>
+                    <input type="file" id="file-input" multiple accept="image/*">
+                </div>
+
+                <!-- CONTROLS & TOOLBAR -->
+                <div class="batch-toolbar">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="search-input" placeholder="Search staged images by name...">
+                    </div>
+                    
+                    <div class="toolbar-actions">
+                        <button class="btn-danger" id="delete-selected-btn" disabled>
+                            <i class="fa-solid fa-trash-can"></i> Delete Selected (<span id="select-badge">0</span>)
+                        </button>
+                        <button class="btn-secondary" id="clear-all-btn">
+                            <i class="fa-solid fa-xmark"></i> Clear Workspace
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GALLERY DISPLAY GRID -->
+            <div class="card gallery-card">
+                <div class="gallery-header">
+                    <div class="chart-title">Staged Media Library (<span id="gallery-counter">0</span>)</div>
+                    <div class="select-all-wrapper">
+                        <input type="checkbox" id="select-all-checkbox">
+                        <label for="select-all-checkbox">Select All</label>
+                    </div>
+                </div>
+
+                <div class="image-grid" id="image-grid">
+                    <div class="empty-state">
+                        <i class="fa-regular fa-image"></i>
+                        <p>No images staged yet. Drag and drop files above or browse to begin.</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+            const sidebar = document.getElementById("sidebar");
+            const sidebarOverlay = document.getElementById("sidebar-overlay");
+
+            function toggleSidebar() {
+                sidebar.classList.toggle("active");
+                sidebarOverlay.classList.toggle("active");
+                
+                if (sidebar.classList.contains("active")) {
+                    document.body.style.overflow = "hidden";
+                } else {
+                    document.body.style.overflow = "";
+                }
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove("active");
+                sidebarOverlay.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    toggleSidebar();
+                });
+            }
+
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener("click", closeSidebar);
+            }
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && sidebar.classList.contains("active")) {
+                    closeSidebar();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (window.innerWidth > 992) {
+                    closeSidebar();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

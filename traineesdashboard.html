@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Training Program Dashboard</title>
     <link rel="stylesheet" href="trainee.css">
+    
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-       
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
         <a href="#" class="logo">
-            <span>
+            <div class="logo-img-wrapper">
                 <img src="image/original logo.png" alt="Institute Logo">
-            </span>
-            <span>
-                INSTITUTE OF HOUSING ADMINISTRATION <span>& </span>
-                <small>MANAGEMENT LTD/GTE</small>
-            </span>
+            </div>
+            <div class="logo-text">
+                <span class="brand-title">INSTITUTE OF HOUSING ADMINISTRATION <span>&</span></span>
+                <small class="brand-sub">MANAGEMENT LTD/GTE</small>
+                <span class="admin-tag">Admin Panel</span>
+            </div>
         </a>
 
         <nav class="sidebar-nav">
-            <a href="overviewdashboard.html">
+            <a href="index.html">
                 <i class="fa-solid fa-chart-line"></i>
                 <span>Overview</span>
             </a>
@@ -36,7 +41,7 @@
                 <span>Properties</span>
             </a>
 
-            <a href="traineesdashboard.html">
+            <a href="traineesdashboard.html" class="active">
                 <i class="fa-solid fa-users"></i>
                 <span>Trainees</span>
             </a>
@@ -51,9 +56,9 @@
                 <span>Enquiries</span>
             </a>
 
-            <a href="trainingprogramdashboard.html" class="active">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <span>Training Programs</span>
+            <a href="propertyupload.html">
+                <i class="fa-solid fa-upload"></i>
+                <span>Upload property image</span>
             </a>
 
             <a href="settings.html">
@@ -63,75 +68,78 @@
         </nav>
 
         <div class="sidebar-bottom">
-            <a href="#">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span>Logout</span>
+            <a href="#" class="user-profile">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="user-info">
+                    <span class="name">Admin User</span>
+                    <span class="role">System Administrator</span>
+                </div>
+                <i class="fa-solid fa-right-from-bracket logout-icon"></i>
             </a>
         </div>
     </aside>
 
     <!-- MAIN CONTENT AREA -->
     <main class="main-content">
-        
-        <!-- TOP BAR -->
-        <div class="top-bar">
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Search training programs...">
-            </div>
-            <div class="top-actions">
-                <div class="date-badge">
-                    <i class="fa-regular fa-calendar"></i>
-                    <span>Oct 2023 - Oct 2024</span>
-                </div>
-                <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
-                <button class="primary-btn">
-                    <i class="fa-solid fa-plus"></i>
-                    <span>Generate Report</span>
-                </button>
-            </div>
-        </div>
 
-        <!-- METRICS CARDS (4 Training Program Details with 0 values) -->
+        <!-- TOP BAR -->
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+              
+            </div>
+
+            <div class="top-actions">
+                <button class="icon-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="badge"></span>
+                </button>
+              
+            </div>
+        </header>
+
+        <!-- METRICS CARDS -->
         <div class="metrics-grid">
             <div class="card">
                 <div class="card-header">
                     <span>Total Programs</span>
-                    <i class="fa-solid fa-book-open"></i>
+                    <div class="icon-box"><i class="fa-solid fa-book-open"></i></div>
                 </div>
                 <div class="card-value">0</div>
-                <div class="card-subtext">~ 0.0% vs last month</div>
+                <div class="card-subtext neutral">~ 0.0% vs last month</div>
             </div>
 
             <div class="card">
                 <div class="card-header">
                     <span>Active Programs</span>
-                    <i class="fa-solid fa-laptop-code"></i>
+                    <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
                 </div>
                 <div class="card-value">0</div>
-                <div class="card-subtext">~ 0.0% vs last month</div>
+                <div class="card-subtext neutral">~ 0.0% vs last month</div>
             </div>
 
             <div class="card">
                 <div class="card-header">
                     <span>Total Enrolments</span>
-                    <i class="fa-solid fa-user-graduate"></i>
+                    <div class="icon-box"><i class="fa-solid fa-user-graduate"></i></div>
                 </div>
                 <div class="card-value">0</div>
-                <div class="card-subtext">~ 0.0% vs last month</div>
+                <div class="card-subtext neutral">~ 0.0% vs last month</div>
             </div>
 
             <div class="card">
                 <div class="card-header">
                     <span>Completed Cohorts</span>
-                    <i class="fa-solid fa-award"></i>
+                    <div class="icon-box"><i class="fa-solid fa-award"></i></div>
                 </div>
                 <div class="card-value">0</div>
-                <div class="card-subtext">~ 0.0% vs last month</div>
+                <div class="card-subtext neutral">~ 0.0% vs last month</div>
             </div>
         </div>
 
-        <!-- MIDDLE SECTION (TREND CHART ONLY) -->
+        <!-- MIDDLE SECTION (TREND CHART) -->
         <div class="middle-grid">
             <div class="card chart-card">
                 <div class="chart-header-flex">
@@ -139,9 +147,14 @@
                         <div class="chart-title">Program Enrolment Trends</div>
                         <div class="chart-subtitle">Enrolments vs Program Completions (Jan - Jun)</div>
                     </div>
+                    <div class="chart-legend">
+                        <span><span class="dot enrolled"></span> Enrolled</span>
+                        <span><span class="dot completed"></span> Completed</span>
+                    </div>
                 </div>
                 <div class="chart-placeholder">
-                    No enrolment trend data available
+                    <i class="fa-solid fa-chart-line placeholder-icon"></i>
+                    <span>No enrolment trend data available</span>
                 </div>
                 <div class="chart-labels">
                     <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
@@ -153,7 +166,7 @@
         <div class="card">
             <div class="chart-header-flex">
                 <div class="chart-title">Training Programs List</div>
-                <a href="#" style="color: #3b82f6; font-size: 12px; text-decoration: none;">View All</a>
+                <a href="#" class="view-all-link">View All</a>
             </div>
             <div class="table-responsive">
                 <table class="table-container">
@@ -170,7 +183,46 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="7">No training programs available</td>
+                            <td class="fw-bold">Housing Management & Practice</td>
+                            <td class="text-muted">Comprehensive certification covering estate operations and tenant administration.</td>
+                            <td>$450.00</td>
+                            <td>Oct 15, 2026</td>
+                            <td><span class="badge-status online">Online</span></td>
+                            <td class="text-center">0</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="btn-icon" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-icon danger" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Facility & Safety Compliance</td>
+                            <td class="text-muted">Technical training on regulatory building safety standards and asset maintenance.</td>
+                            <td>$600.00</td>
+                            <td>Nov 01, 2026</td>
+                            <td><span class="badge-status hybrid">Hybrid</span></td>
+                            <td class="text-center">0</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="btn-icon" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-icon danger" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Real Estate Financial Leadership</td>
+                            <td class="text-muted">Executive course on real estate valuation, budgeting, and risk mitigation.</td>
+                            <td>$850.00</td>
+                            <td>Nov 20, 2026</td>
+                            <td><span class="badge-status physical">Physical</span></td>
+                            <td class="text-center">0</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="btn-icon" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-icon danger" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -179,5 +231,50 @@
 
     </main>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+
+            const overlay = document.createElement('div');
+            overlay.classList.add('sidebar-overlay');
+            document.body.appendChild(overlay);
+
+            function openSidebar() {
+                sidebar.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'true');
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+                if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+            }
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    sidebar.classList.contains('active') ? closeSidebar() : openSidebar();
+                });
+            }
+
+            overlay.addEventListener('click', closeSidebar);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                    closeSidebar();
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 992 && sidebar.classList.contains('active')) {
+                    closeSidebar();
+                }
+            });
+        });
+    </script>
 </body>
 </html>

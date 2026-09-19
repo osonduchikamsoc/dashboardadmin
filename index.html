@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +7,10 @@
   <title>Overview Dashboard - IHAM</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 <body>
@@ -16,7 +19,6 @@
 
     <!-- SIDEBAR NAVIGATION -->
     <aside class="sidebar">
-      
       <!-- Logo Branding -->
       <a href="overviewdashboard.html" class="logo">
         <div class="logo-mark">
@@ -30,7 +32,8 @@
 
       <!-- Main Navigation Links -->
       <nav class="sidebar-nav">
-        <a href="overviewdashboard.html" class="nav-item active">
+        
+        <a href="index.html" class="nav-item active">
           <i class="fa-solid fa-chart-line"></i>
           <span>Overview</span>
         </a>
@@ -55,9 +58,9 @@
           <span>Enquiries</span>
         </a>
 
-        <a href="trainingprogramdashboard.html" class="nav-item">
-          <i class="fa-solid fa-graduation-cap"></i>
-          <span>Training Programs</span>
+        <a href="propertyupload.html" class="active">
+          <i class="fa-solid fa-upload"></i>
+          <span>Upload property image </span>
         </a>
 
         <a href="settings.html" class="nav-item">
@@ -66,17 +69,14 @@
         </a>
       </nav>
 
-      <!-- User Profile Card (Reference Bottom Sidebar Style) -->
-      <div class="sidebar-user">
-        <div class="admin-avatar">A</div>
-        <div class="admin-info">
-          <strong>Admin</strong>
-          <small>Administrator</small>
+
+      <div class="sidebar-bottom">
+            <a href="#">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
         </div>
-        <a href="#" class="logout-btn" title="Logout">
-          <i class="fa-solid fa-right-from-bracket"></i>
-        </a>
-      </div>
+
 
     </aside>
 
@@ -86,36 +86,29 @@
 
       <!-- TOPBAR NAVIGATION -->
       <header class="topbar">
-
         <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
           <i class="fa-solid fa-bars"></i>
         </button>
 
-        <div class="topbar-search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search dashboard...">
-        </div>
 
         <div class="topbar-actions">
-          
-          <div class="date-filter">
-            <i class="fa-regular fa-calendar"></i>
-            <select>
-              <option>2026</option>
-              <option>2025</option>
-              <option>2024</option>
-            </select>
+
+          <div class="sidebar-user">
+            <div class="admin-avatar">A</div>
+            <div class="admin-info">
+              <strong>Admin</strong>
+              <small>Administrator</small>
+            </div>
+            <a href="#" class="logout-btn" title="Logout">
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
           </div>
+
 
           <button class="icon-btn notification-btn">
             <i class="fa-regular fa-bell"></i>
-            <span class="badge">4</span>
+            <span class="badge"></span>
           </button>
-
-          <a href="propertymgtdashboard.html" class="btn-primary">
-            <i class="fa-solid fa-plus"></i>
-            <span>Add Property</span>
-          </a>
 
         </div>
 
@@ -208,7 +201,7 @@
 
             <!-- REVENUE CHART CARD -->
             <div class="dashboard-card">
-              
+
               <div class="card-header">
                 <div>
                   <h2 class="card-title">Revenue Overview</h2>
@@ -237,7 +230,7 @@
                   <div class="chart-grid-line"></div>
 
                   <div class="chart-bars">
-                    
+
                     <div class="month">
                       <div class="bars">
                         <div class="bar property-bar" style="height:0%;"></div>
@@ -295,7 +288,7 @@
 
             <!-- RECENT OVERVIEW TABLE CARD (3 DETAIL ROWS, ZEROED VALUES) -->
             <div class="dashboard-card">
-              
+
               <div class="card-header">
                 <div>
                   <h2 class="card-title">Property & Training Records</h2>
@@ -362,7 +355,7 @@
 
             <!-- RECENT ACTIVITY CARD -->
             <div class="dashboard-card">
-              
+
               <div class="card-header">
                 <div>
                   <h2 class="card-title">Recent Activity</h2>
@@ -430,7 +423,7 @@
 
             <!-- QUICK ACTIONS CARD -->
             <div class="dashboard-card">
-              
+
               <div class="card-header">
                 <div>
                   <h2 class="card-title">Quick Actions</h2>
@@ -468,6 +461,65 @@
   </div>
 
 </body>
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    // Create backdrop overlay dynamically for closing the sidebar on click/tap outside
+    const overlay = document.createElement('div');
+    overlay.classList.add('sidebar-overlay');
+    document.body.appendChild(overlay);
+
+    // Function to open sidebar
+    function openSidebar() {
+      sidebar.classList.add('active');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      mobileToggle.setAttribute('aria-expanded', 'true');
+    }
+
+    // Function to close sidebar
+    function closeSidebar() {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = ''; // Restore background scrolling
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    // Toggle button click event
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = sidebar.classList.contains('active');
+        if (isOpen) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
+      });
+    }
+
+    // Close when clicking on backdrop overlay
+    overlay.addEventListener('click', closeSidebar);
+
+    // Close when pressing the Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+        closeSidebar();
+      }
+    });
+
+    // Automatically reset states when resizing screen past mobile breakpoint (850px)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 850 && sidebar.classList.contains('active')) {
+        closeSidebar();
+      }
+    });
+  });
+</script>
 
 
 </html>

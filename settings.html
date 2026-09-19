@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | IHAM Admin</title>
+    <link rel="stylesheet" href="settings.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR OVERLAY FOR MOBILE CLOSE -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <a href="#" class="logo">
+                <img src="image/original logo.png" alt="Institute Logo">
+                <span>
+                    INSTITUTE OF HOUSING ADMINISTRATION
+                    <small>& MANAGEMENT LTD/GTE</small>
+                    <span>Admin Panel</span>
+                </span>
+            </a>
+
+            <nav class="sidebar-nav">
+
+                <a href="index.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Overview</span>
+                </a>
+
+                <a href="propertymgtdashboard.html">
+                    <i class="fa-solid fa-building"></i>
+                    <span>Properties</span>
+                </a>
+
+                <a href="traineesdashboard.html">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Trainees</span>
+                </a>
+
+                <a href="paymentdashboard.html">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Payments</span>
+                </a>
+
+                <a href="enquirydashboard.html">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Enquiries</span>
+                </a>
+
+                <a href="propertyupload.html">
+                    <i class="fa-solid fa-upload"></i>
+                    <span>Upload property image</span>
+                </a>
+
+                <a href="settings.html" class="active">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR NAVIGATION -->
+            <header class="topbar">
+
+                <div class="top-bar-left">
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h2>Account Settings</h2>
+                </div>
+
+                <div class="topbar-right">
+                    <div class="admin-profile-sidebar">
+                        <div class="profile-avatar">A</div>
+                        <div class="profile-info">
+                            <strong>Admin</strong>
+                            <small>Administrator</small>
+                        </div>
+                    </div>
+                </div>
+
+            </header>
+
+            <!-- PAGE CONTENT -->
+            <section class="page-content">
+
+                <div class="settings-grid">
+
+                    <!-- UPDATE PROFILE CARD -->
+                    <div class="grid-card">
+                        <div class="grid-card-header">
+                            <div>
+                                <h2>Profile Information</h2>
+                                <p class="card-subtext">Update your account detail preferences and public avatar.</p>
+                            </div>
+                        </div>
+
+                        <form id="profileForm" class="settings-form">
+                            <div class="avatar-upload-section">
+                                <div class="avatar-preview">
+                                    <span id="avatarInitials">A</span>
+                                </div>
+                                <div class="avatar-actions">
+                                    <label for="avatarInput" class="btn btn-secondary">
+                                        <i class="fa-solid fa-camera"></i> Change Photo
+                                    </label>
+                                    <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                                    <small class="help-text">JPG, GIF or PNG. Max size 2MB</small>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fa-solid fa-user"></i>
+                                        <input type="text" id="fullName" value="Admin" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <input type="email" id="email" value="admin@iham.org.ng" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fa-solid fa-phone"></i>
+                                        <input type="tel" id="phone" value="+234 800 000 0000">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="role">User Role</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fa-solid fa-shield-halved"></i>
+                                        <input type="text" id="role" value="Administrator" disabled class="input-disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Profile Changes</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- CHANGE PASSWORD CARD -->
+                    <div class="grid-card">
+                        <div class="grid-card-header">
+                            <div>
+                                <h2>Change Password</h2>
+                                <p class="card-subtext">Ensure your account is using a long, random password to stay secure.</p>
+                            </div>
+                        </div>
+
+                        <form id="passwordForm" class="settings-form">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <div class="input-icon-wrapper">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <input type="password" id="currentPassword" placeholder="••••••••" required>
+                                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="newPassword">New Password</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fa-solid fa-key"></i>
+                                        <input type="password" id="newPassword" placeholder="••••••••" required>
+                                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirm New Password</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fa-solid fa-key"></i>
+                                        <input type="password" id="confirmPassword" placeholder="••••••••" required>
+                                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="password-requirements">
+                                <ul>
+                                    <li><i class="fa-solid fa-circle-check"></i> Minimum 8 characters</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> At least 1 number and 1 special character</li>
+                                </ul>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Update Password</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Sidebar logic
+            const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+            const sidebar = document.getElementById("sidebar");
+            const sidebarOverlay = document.getElementById("sidebar-overlay");
+
+            function toggleSidebar() {
+                if (sidebar) sidebar.classList.toggle("active");
+                if (sidebarOverlay) sidebarOverlay.classList.toggle("active");
+                if (mobileMenuToggle) mobileMenuToggle.classList.toggle("is-active");
+
+                if (sidebar && sidebar.classList.contains("active")) {
+                    document.body.style.overflow = "hidden";
+                } else {
+                    document.body.style.overflow = "";
+                }
+            }
+
+            function closeSidebar() {
+                if (sidebar) sidebar.classList.remove("active");
+                if (sidebarOverlay) sidebarOverlay.classList.remove("active");
+                if (mobileMenuToggle) mobileMenuToggle.classList.remove("is-active");
+                document.body.style.overflow = "";
+            }
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    toggleSidebar();
+                });
+            }
+
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener("click", closeSidebar);
+            }
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && sidebar && sidebar.classList.contains("active")) {
+                    closeSidebar();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (window.innerWidth > 992) {
+                    closeSidebar();
+                }
+            });
+
+            // Password field toggle visibility
+            const toggleButtons = document.querySelectorAll(".toggle-password");
+            toggleButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    const input = this.previousElementSibling;
+                    const icon = this.querySelector("i");
+                    
+                    if (input.type === "password") {
+                        input.type = "text";
+                        icon.classList.remove("fa-eye");
+                        icon.classList.add("fa-eye-slash");
+                    } else {
+                        input.type = "password";
+                        icon.classList.remove("fa-eye-slash");
+                        icon.classList.add("fa-eye");
+                    }
+                });
+            });
+
+            // Avatar Preview logic
+            const avatarInput = document.getElementById("avatarInput");
+            const avatarPreview = document.querySelector(".avatar-preview");
+
+            if (avatarInput) {
+                avatarInput.addEventListener("change", function(e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(event) {
+                            avatarPreview.innerHTML = `<img src="${event.target.result}" alt="Avatar Preview" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">`;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

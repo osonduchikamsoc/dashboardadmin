@@ -4,31 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="propertymgt.css">
     <title>Property Management | IHAM Admin</title>
+    <link rel="stylesheet" href="propertymgt.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+   
+    </style>
 </head>
 
 <body>
 
+    <!-- SIDEBAR OVERLAY FOR MOBILE CLOSE -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
     <div class="dashboard">
 
         <!-- SIDEBAR -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
 
             <a href="#" class="logo">
                 <img src="image/original logo.png" alt="Institute Logo">
                 <span>
                     INSTITUTE OF HOUSING ADMINISTRATION
                     <small>& MANAGEMENT LTD/GTE</small>
+                    <span>Admin Panel</span>
                 </span>
             </a>
 
             <nav class="sidebar-nav">
 
-                <a href="overviewdashboard.html">
+                <a href="index.html">
                     <i class="fa-solid fa-chart-line"></i>
                     <span>Overview</span>
                 </a>
@@ -53,9 +61,9 @@
                     <span>Enquiries</span>
                 </a>
 
-                <a href="trainingprogramdashboard.html">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <span>Training Programs</span>
+                <a href="propertyupload.html">
+                    <i class="fa-solid fa-upload"></i>
+                    <span>Upload property image</span>
                 </a>
 
                 <a href="settings.html">
@@ -65,54 +73,29 @@
 
             </nav>
 
-            <div class="sidebar-bottom">
-                <a href="#">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <span>Logout</span>
-                </a>
-
-                <div class="admin-profile-sidebar">
-                    <div class="profile-avatar">A</div>
-                    <div class="profile-info">
-                        <strong>Admin</strong>
-                        <small>Administrator</small>
-                    </div>
-                </div>
-            </div>
-
         </aside>
 
         <!-- MAIN CONTENT -->
         <main class="main-content">
 
-            <!-- TOP BAR -->
+            <!-- TOPBAR NAVIGATION -->
             <header class="topbar">
 
-                <button class="menu-btn" id="menuBtn">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-
-                <div class="top-search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search market data, zip codes...">
+                <div class="top-bar-left">
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
                 </div>
 
                 <div class="topbar-right">
 
-                    <div class="date-badge">
-                        <i class="fa-regular fa-calendar"></i>
-                        <span>Oct 2023 - Oct 2024</span>
+                    <div class="admin-profile-sidebar">
+                        <div class="profile-avatar">A</div>
+                        <div class="profile-info">
+                            <strong>Admin</strong>
+                            <small>Administrator</small>
+                        </div>
                     </div>
-
-                    <button class="notification">
-                        <i class="fa-regular fa-bell"></i>
-                        <span>3</span>
-                    </button>
-
-                    <button class="btn-green" id="openPropertyForm">
-                        <i class="fa-solid fa-plus"></i>
-                        Generate Report
-                    </button>
 
                 </div>
 
@@ -121,7 +104,7 @@
             <!-- PAGE CONTENT -->
             <section class="page-content">
 
-                <!-- STAT CARDS (4 TOP STATS FROM DESIGN) -->
+                <!-- STAT CARDS -->
                 <div class="property-stats">
 
                     <div class="stat-card">
@@ -182,11 +165,17 @@
                         <div class="grid-card-header">
                             <div>
                                 <h2>Property Price Trends</h2>
-                                <p style="font-size: 11px; color: #6b7280; margin-top: 2px;">Sold Price vs List Price (Jan - Jun)</p>
+                                <p style="font-size: 11px; color: #6b7280; margin-top: 2px;">
+                                    Sold Price vs List Price (Jan - Jun)
+                                </p>
                             </div>
                             <div style="display: flex; gap: 12px; font-size: 11px;">
-                                <span style="color: #10b981;"><i class="fa-solid fa-circle" style="font-size: 8px;"></i> Sold Price</span>
-                                <span style="color: #6366f1;"><i class="fa-solid fa-circle" style="font-size: 8px;"></i> List Price</span>
+                                <span style="color: #10b981;">
+                                    <i class="fa-solid fa-circle" style="font-size: 8px;"></i> Sold Price
+                                </span>
+                                <span style="color: #6366f1;">
+                                    <i class="fa-solid fa-circle" style="font-size: 8px;"></i> List Price
+                                </span>
                             </div>
                         </div>
 
@@ -250,7 +239,7 @@
 
                 </div>
 
-                <!-- BOTTOM GRID (TABLE + RECENT LISTINGS) -->
+                <!-- BOTTOM GRID -->
                 <div class="dashboard-grid">
 
                     <!-- TOP PERFORMING AREAS / MANAGEMENT TABLE -->
@@ -284,7 +273,7 @@
                             </select>
                         </div>
 
-                        <!-- TABLE (RESTRICTED TO 3 ROWS) -->
+                        <!-- TABLE -->
                         <div class="table-wrapper">
                             <table class="property-table">
                                 <thead>
@@ -404,119 +393,62 @@
 
                 </div>
 
-                <!-- ADD / EDIT PROPERTY FORM -->
-                <div class="property-form-section" id="propertyFormSection">
-
-                    <div class="form-header">
-                        <div>
-                            <h2>Add Property</h2>
-                            <p style="font-size: 11px; color: #6b7280;">Enter the property details below.</p>
-                        </div>
-                        <button class="close-form" id="closePropertyForm">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </div>
-
-                    <form id="propertyForm">
-
-                        <div class="form-grid">
-
-                            <!-- TITLE -->
-                            <div class="form-group full">
-                                <label for="propertyTitle">Property Title</label>
-                                <input type="text" id="propertyTitle" placeholder="Enter property title" required>
-                            </div>
-
-                            <!-- CATEGORY -->
-                            <div class="form-group">
-                                <label for="propertyCategory">Category</label>
-                                <select id="propertyCategory" required>
-                                    <option value="">Select Category</option>
-                                    <option value="Land">Land</option>
-                                    <option value="Residential Sale">Residential Sale</option>
-                                    <option value="Rent">Rent</option>
-                                    <option value="Commercial">Commercial</option>
-                                </select>
-                            </div>
-
-                            <!-- PRICE -->
-                            <div class="form-group">
-                                <label for="propertyPrice">Price</label>
-                                <input type="number" id="propertyPrice" placeholder="Enter price" min="0" required>
-                            </div>
-
-                            <!-- LOCATION -->
-                            <div class="form-group full">
-                                <label for="propertyLocation">Location</label>
-                                <input type="text" id="propertyLocation" placeholder="e.g. Gwarinpa, Abuja" required>
-                            </div>
-
-                            <!-- CONDITIONAL DETAILS -->
-                            <div class="conditional-fields" id="propertyDetails">
-                                <div class="form-group">
-                                    <label for="bedrooms">Bedrooms</label>
-                                    <input type="number" id="bedrooms" min="0" placeholder="Number of bedrooms">
-                                </div>
-                                <div class="form-group">
-                                    <label for="bathrooms">Bathrooms</label>
-                                    <input type="number" id="bathrooms" min="0" placeholder="Number of bathrooms">
-                                </div>
-                                <div class="form-group">
-                                    <label for="propertySize">Size</label>
-                                    <input type="text" id="propertySize" placeholder="e.g. 500 sqm">
-                                </div>
-                            </div>
-
-                            <!-- DESCRIPTION -->
-                            <div class="form-group full">
-                                <label for="propertyDescription">Description</label>
-                                <textarea id="propertyDescription" rows="4" placeholder="Write a detailed description of the property..."></textarea>
-                            </div>
-
-                            <!-- IMAGE UPLOAD -->
-                            <div class="form-group full">
-                                <label for="propertyImages">Property Images</label>
-                                <div class="upload-box">
-                                    <input type="file" id="propertyImages" accept="image/*" multiple>
-                                    <i class="fa-solid fa-cloud-arrow-up"></i>
-                                    <strong>Upload Property Images</strong>
-                                    <span>You can select multiple images</span>
-                                </div>
-                                <div class="image-preview" id="imagePreview"></div>
-                            </div>
-
-                            <!-- STATUS -->
-                            <div class="form-group full">
-                                <label for="propertyStatus">Status</label>
-                                <select id="propertyStatus" required>
-                                    <option value="Available">Available</option>
-                                    <option value="Under Offer">Under Offer</option>
-                                    <option value="Sold">Sold</option>
-                                    <option value="Rented">Rented</option>
-                                </select>
-                            </div>
-
-                        </div>
-
-                        <!-- FORM BUTTONS -->
-                        <div class="form-actions">
-                            <button type="button" class="btn btn-light" id="cancelProperty">Cancel</button>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fa-solid fa-floppy-disk"></i>
-                                Save Property
-                            </button>
-                        </div>
-
-                    </form>
-
-                </div>
-
             </section>
 
         </main>
 
     </div>
 
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+            const sidebar = document.getElementById("sidebar");
+            const sidebarOverlay = document.getElementById("sidebar-overlay");
+
+            function toggleSidebar() {
+                if (sidebar) sidebar.classList.toggle("active");
+                if (sidebarOverlay) sidebarOverlay.classList.toggle("active");
+                if (mobileMenuToggle) mobileMenuToggle.classList.toggle("is-active");
+
+                if (sidebar && sidebar.classList.contains("active")) {
+                    document.body.style.overflow = "hidden";
+                } else {
+                    document.body.style.overflow = "";
+                }
+            }
+
+            function closeSidebar() {
+                if (sidebar) sidebar.classList.remove("active");
+                if (sidebarOverlay) sidebarOverlay.classList.remove("active");
+                if (mobileMenuToggle) mobileMenuToggle.classList.remove("is-active");
+                document.body.style.overflow = "";
+            }
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    toggleSidebar();
+                });
+            }
+
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener("click", closeSidebar);
+            }
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && sidebar && sidebar.classList.contains("active")) {
+                    closeSidebar();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (window.innerWidth > 992) {
+                    closeSidebar();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

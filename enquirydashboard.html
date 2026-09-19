@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="enquiry.css">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   
+
 </head>
+
 <body>
 
     <!-- SIDEBAR -->
@@ -24,7 +26,7 @@
         </a>
 
         <nav class="sidebar-nav">
-            <a href="overviewdashboard.html">
+            <a href="index.html">
                 <i class="fa-solid fa-chart-line"></i>
                 <span>Overview</span>
             </a>
@@ -49,10 +51,12 @@
                 <span>Enquiries</span>
             </a>
 
-            <a href="trainingprogramdashboard.html">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <span>Training Programs</span>
+
+            <a href="propertyupload.html" class="active">
+                <i class="fa-solid fa-upload"></i>
+                <span>Upload property image </span>
             </a>
+
 
             <a href="settings.html">
                 <i class="fa-solid fa-gear"></i>
@@ -70,23 +74,27 @@
 
     <!-- MAIN CONTENT AREA -->
     <main class="main-content">
-        
+
         <!-- TOP BAR -->
         <div class="top-bar">
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Search enquiries...">
-            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
             <div class="top-actions">
-                <div class="date-badge">
+                <!-- <div class="date-badge">
                     <i class="fa-regular fa-calendar"></i>
                     <span>Oct 2023 - Oct 2024</span>
-                </div>
-                <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
-                <button class="primary-btn">
+                </div> -->
+
+                <button class="icon-btn">
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+
+                <!-- <button class="primary-btn">
                     <i class="fa-solid fa-plus"></i>
                     <span>Generate Report</span>
-                </button>
+                </button> -->
             </div>
         </div>
 
@@ -130,7 +138,7 @@
         </div>
 
         <!-- MIDDLE SECTION (TREND CHART ONLY) -->
-        <div class="middle-grid">
+        <!-- <div class="middle-grid">
             <div class="card chart-card">
                 <div class="chart-header-flex">
                     <div>
@@ -145,7 +153,140 @@
                     <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
                 </div>
             </div>
+        </div> -->
+
+
+
+        <div class="middle-grid">
+            <div class="card chart-card">
+                <div class="chart-header-flex">
+                    <div>
+                        <div class="chart-title">Enquiry Volume Trends</div>
+                        <div class="chart-subtitle">Received vs Resolved Enquiries (Jan - Jun)</div>
+                    </div>
+
+                    <!-- Summary Badges -->
+                    <div class="chart-summary-pills">
+                        <div class="pill pill-received">
+                            <span class="pill-dot"></span>
+                            <span class="pill-label">Received:</span>
+                            <strong id="total-received-count">1,000</strong>
+                        </div>
+                        <div class="pill pill-resolved">
+                            <span class="pill-dot"></span>
+                            <span class="pill-label">Resolved:</span>
+                            <strong id="total-resolved-count">850</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Visual Bar Chart Container -->
+                <div class="chart-visual-container">
+                    <!-- Y-Axis Scales -->
+                    <div class="y-axis-labels">
+                        <span>250</span>
+                        <span>200</span>
+                        <span>150</span>
+                        <span>100</span>
+                        <span>50</span>
+                        <span>0</span>
+                    </div>
+
+                    <!-- Graph Area -->
+                    <div class="chart-bars-wrapper">
+                        <!-- JAN (120 Received / 100 Resolved) -->
+                        <div class="bar-group">
+                            <div class="bar-pair">
+                                <div class="bar bar-received" style="--bar-height: 48%;" title="Received: 120">
+                                    <span class="bar-tooltip">120</span>
+                                </div>
+                                <div class="bar bar-resolved" style="--bar-height: 40%;" title="Resolved: 100">
+                                    <span class="bar-tooltip">100</span>
+                                </div>
+                            </div>
+                            <span class="month-label">Jan</span>
+                        </div>
+
+                        <!-- FEB (150 Received / 130 Resolved) -->
+                        <div class="bar-group">
+                            <div class="bar-pair">
+                                <div class="bar bar-received" style="--bar-height: 60%;" title="Received: 150">
+                                    <span class="bar-tooltip">150</span>
+                                </div>
+                                <div class="bar bar-resolved" style="--bar-height: 52%;" title="Resolved: 130">
+                                    <span class="bar-tooltip">130</span>
+                                </div>
+                            </div>
+                            <span class="month-label">Feb</span>
+                        </div>
+
+                        <!-- MAR (180 Received / 155 Resolved) -->
+                        <div class="bar-group">
+                            <div class="bar-pair">
+                                <div class="bar bar-received" style="--bar-height: 72%;" title="Received: 180">
+                                    <span class="bar-tooltip">180</span>
+                                </div>
+                                <div class="bar bar-resolved" style="--bar-height: 62%;" title="Resolved: 155">
+                                    <span class="bar-tooltip">155</span>
+                                </div>
+                            </div>
+                            <span class="month-label">Mar</span>
+                        </div>
+
+                        <!-- APR (210 Received / 180 Resolved) -->
+                        <div class="bar-group">
+                            <div class="bar-pair">
+                                <div class="bar bar-received" style="--bar-height: 84%;" title="Received: 210">
+                                    <span class="bar-tooltip">210</span>
+                                </div>
+                                <div class="bar bar-resolved" style="--bar-height: 72%;" title="Resolved: 180">
+                                    <span class="bar-tooltip">180</span>
+                                </div>
+                            </div>
+                            <span class="month-label">Apr</span>
+                        </div>
+
+                        <!-- MAY (190 Received / 160 Resolved) -->
+                        <div class="bar-group">
+                            <div class="bar-pair">
+                                <div class="bar bar-received" style="--bar-height: 76%;" title="Received: 190">
+                                    <span class="bar-tooltip">190</span>
+                                </div>
+                                <div class="bar bar-resolved" style="--bar-height: 64%;" title="Resolved: 160">
+                                    <span class="bar-tooltip">160</span>
+                                </div>
+                            </div>
+                            <span class="month-label">May</span>
+                        </div>
+
+                        <!-- JUN (150 Received / 125 Resolved) -->
+                        <div class="bar-group">
+                            <div class="bar-pair">
+                                <div class="bar bar-received" style="--bar-height: 60%;" title="Received: 150">
+                                    <span class="bar-tooltip">150</span>
+                                </div>
+                                <div class="bar bar-resolved" style="--bar-height: 50%;" title="Resolved: 125">
+                                    <span class="bar-tooltip">125</span>
+                                </div>
+                            </div>
+                            <span class="month-label">Jun</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
         <!-- LOWER SECTION (ENQUIRY TABLE WITH PAYMENT METHODS) -->
         <div class="card">
@@ -179,4 +320,65 @@
     </main>
 
 </body>
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+
+        // Create backdrop overlay dynamically for closing the sidebar on click/tap outside
+        const overlay = document.createElement('div');
+        overlay.classList.add('sidebar-overlay');
+        document.body.appendChild(overlay);
+
+        // Function to open sidebar
+        function openSidebar() {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            mobileToggle.setAttribute('aria-expanded', 'true');
+        }
+
+        // Function to close sidebar
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = ''; // Restore background scrolling
+            mobileToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        // Toggle button click event
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = sidebar.classList.contains('active');
+                if (isOpen) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            });
+        }
+
+        // Close when clicking on backdrop overlay
+        overlay.addEventListener('click', closeSidebar);
+
+        // Close when pressing the Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeSidebar();
+            }
+        });
+
+        // Automatically reset states when resizing screen past mobile breakpoint (850px)
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 850 && sidebar.classList.contains('active')) {
+                closeSidebar();
+            }
+        });
+    });
+</script>
+
 </html>
